@@ -1,0 +1,15 @@
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+@media (max-width: 700px) and (max-height: 800px) {
+    .homeWrapper {
+        width: 100%;
+    }
+}

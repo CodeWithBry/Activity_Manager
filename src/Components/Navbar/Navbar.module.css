@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.nav,
+.navWithLogForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 4rem;
+    gap: 1rem;
+    font-family: "Laila", sans-serif;
+    box-shadow: var(--drop-shadow);
+    background-color: var(--sixty-percent);
+    z-index: 3;
+}
+
+.navWithLogForm {
+    position: absolute;
+    z-index: 3;
+    background-color: var(--sixty-percent);
+    color: var(--thirty-percent);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-left: 1rem;
+}
+
+.left #iconImage {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid var(--sixty-percent);
+    box-shadow: var(--drop-shadow);
+}
+
+.left #title {
+    width: fit-content;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    text-wrap: nowrap;
+    color: var(--thirty-percent);
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: .5rem;
+    margin-right: 1rem;
+}
+
+.searchWrapper {
+    display: flex;
+    font-size: clamp(.6rem, 2vw, 1rem);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--drop-shadow);
+}
+
+.searchWrapper #searchLogo {
+    background: transparent;
+}
+
+.searchWrapper>* {
+    padding: .65rem 1rem;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+.searchWrapper #searchInput+#searchButton {
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.searchWrapper #searchInput {
+    width: 13rem;
+}
+
+.searchWrapper #searchButton {
+    color: var(--sixty-percent);
+    background-color: var(--thirty-percent);
+}
+
+.right .authButts, .right .Links {
+    height: fit-content;
+    padding: .5rem .75rem;
+    font-size: clamp(.6rem, 2vw, 1rem);
+    border-radius: 1rem;
+    border: 0;
+    font-family: "Inter", sans;
+    font-weight: 500;
+    color: white;
+    box-shadow: var(--drop-shadow);
+}
+
+ .right .Links {
+    background: var(--ten-percent) ;
+    text-decoration: none;
+ }
+
+.right #signUp {
+    background-color: var(--ten-percent);
+}
+
+.right #signUp #signUpLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.right #logIn {
+    background-color: var(--thirty-percent);
+}
+
+.right #logIn #logInLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.right #hamburgerButton {
+    display: none;
+    place-items: center;
+    padding: .6rem;
+    font-size: .6rem;
+    border-radius: 1rem;
+    box-shadow: var(--drop-shadow);
+    background-color: white;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .searchWrapper #searchInput,
+    .searchWrapper #searchButton {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .nav {
+        height: 3.5rem;
+    }
+
+    .left #iconImage {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .right {
+        gap: .2rem;
+    }
+
+    .searchWrapper #searchLogo {
+        padding: .6rem;
+    }
+
+    .searchWrapper #searchInput,
+    .searchWrapper #searchButton {
+        display: none;
+    }
+
+    .right .authButts {
+        padding: .6rem;
+    }
+}
+
+
+@media screen and (max-width: 380px) {
+    .left #title {
+        font-size: .75rem;
+    }
+
+    .right .authButts {
+        display: none;
+    }
+
+    .right #hamburgerButton {
+        display: grid;
+    }
+}

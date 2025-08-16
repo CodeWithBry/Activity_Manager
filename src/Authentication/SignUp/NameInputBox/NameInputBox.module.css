@@ -1,0 +1,224 @@
+.signUpWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--thirty-percent);
+    background-color: var(--sixty-percent);
+    font-family: var(--font);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.signUpWrapper .signUpBox {
+    width: 340px;
+    height: fit-content;
+    padding: clamp(1rem, 2.5vw, 2rem) clamp(1.5rem, 2.5vw, 2.5rem);
+    gap: 2rem;
+    margin-top: 7rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--thirty-percent);
+    box-shadow: -1rem 0 0 -5px var(--ten-percent);
+    position: relative;
+}
+
+.signUpWrapper .signUpBox .backButton {
+    font-size: 1.5rem;
+    position: absolute;
+    font-weight: 900;
+    top: 0;
+    right: 0;
+    background-color: #ffffff3f;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.signUpWrapper .signUpBox>div {
+    height: fit-content;
+    width: 100%;
+}
+
+/* TOP */
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top>h1,.top span {
+    width: 100%;
+    text-align: center;
+    color: var(--sixty-percent);
+}
+
+.top h1 {
+    font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+}
+
+.top span {
+    font-size: small;
+}
+
+/* MIDDLE */
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.inputBoxes {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 2px solid #c6c5c5;
+    cursor: pointer;
+    padding: clamp(.2rem, 2.5vw, .5rem) 0;
+    font-weight: bold;
+}
+
+.inputBoxes:focus-within,
+.inputBoxesFocused {
+    border: 2px solid var(--ten-percent);
+}
+
+.inputBoxes>input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 90%;
+    color: var(--ten-percent);
+    padding-bottom: .2rem;
+    font-weight: bold;
+    font-size: clamp(.5rem, 2.5vw, 1rem);
+}
+
+.inputBoxes>span {
+    position: absolute;
+    left: 0;
+    top: .5rem;
+    padding: 0 .5rem;
+    color: #c6c5c5;
+    transition: .5s ease;
+    font-size: clamp(.5rem, 2.5vw, 1rem);
+}
+
+.inputBoxes:focus-within>span,
+.inputBoxes>.focused {
+    color: var(--ten-percent);
+    background-color: var(--thirty-percent);
+    font-size: .75rem;
+    transition: top .2s ease;
+    animation: moveToTop .15s linear forwards;
+}
+
+@keyframes moveToTop {
+    to {
+        left: .5rem;
+        top: -.5rem;
+    }
+}
+
+.bottomLinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomLinks .links {
+    color: var(--ten-percent);
+    text-shadow: 0 0 2px rgb(14, 14, 14);
+    text-decoration: none;
+    font-size: xx-small;
+    transition: .2s ease;
+}
+
+.bottomLinks .links:hover {
+    text-decoration: underline;
+}
+
+.middle>button {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: fit-content;
+    border-radius: .5rem;
+    color: white;
+    background-color: var(--ten-percent);
+    font-weight: bolder;
+    font-size: clamp(.6rem, 2.5vw, 1.2rem);
+    padding: clamp(2px, 2.5vw, .5rem) 0;
+    margin-top: 1rem;
+    box-shadow: 0 4px 5px -2px rgb(67, 67, 67);
+}
+
+.middle>button:hover {
+    background-color: white;
+    color: var(--thirty-percent);
+}
+
+/* BOTTOM */
+
+.bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bottom>h4 {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(.5rem, 2.5vw, 1rem);
+}
+
+.bottom .platforms {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: clamp(.5rem, 2.5vw, 1rem);
+    justify-content: center;
+}
+
+.bottom .platforms>button {
+    background-color: white;
+    border: none;
+    box-shadow: 0 5px .5rem 0 rgb(67, 67, 67);
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.bottom .platforms>button:hover {
+    background-color: #bbb8b8;
+}
+
+.bottom .platforms>button>svg {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 678px) {
+    .logInWrapper {
+        height: fit-content;
+        padding-bottom: 5rem;
+    }
+
+    .logInWrapper .signUpBox {
+        width: 190px;
+        height: 290px;
+    }
+
+    .bottom .platforms>button {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}

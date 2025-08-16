@@ -1,0 +1,74 @@
+[
+        {
+            "subjectName" : "Computer System Servicing",
+            "subjectNameAbbreviation": "CSS",
+            "subjectTeacher": "Sir. Enrico Dela Cruz",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/CSS.webp",
+            "color": "#3867F6"
+        },
+        {
+            "subjectName" : "Robotics",
+            "subjectNameAbbreviation": "Robotics",
+            "subjectTeacher": "Ma'am Sophia Magdangal",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/Robotics.webp",
+            "color": "#05A2FD"
+        },
+        {
+            "subjectName" : "Practical Research 2",
+            "subjectNameAbbreviation": "PR2",
+            "subjectTeacher": "Sir. Renedict De Leon",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/PR2.jpg",
+            "color": "#B68209"
+        },
+        {
+            "subjectName" : "Understanding Culuture, Society and Politics",
+            "subjectNameAbbreviation": "UCSP",
+            "subjectTeacher": "Sir. Justin Sebastian",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/UCSP.jpg",
+            "color": "#FD6405"
+        },
+        {
+            "subjectName" : "Contemporary Philippines Art from the Region",
+            "subjectNameAbbreviation": "CPAR",
+            "subjectTeacher": "F. Galang",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/CPAR.webp",
+            "color": "#D5BA1F"
+        },
+        {
+            "subjectName" : "Philosophy",
+            "subjectNameAbbreviation": "Philosophy",
+            "subjectTeacher": "Sir. Joshua Ramos",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/Philosophy.jpg",
+            "color": "#229961"
+        },
+        {
+            "subjectName" : "Entrepreneurship",
+            "subjectNameAbbreviation": "Entrepreneurship",
+            "subjectTeacher": "Sir. Kennet Miranda",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/Entrepreneurship.jpg",
+            "color": "#0ED64D"
+        },
+        {
+            "subjectName" : "21st Century Literature",
+            "subjectNameAbbreviation": "21stCL",
+            "subjectTeacher": "L. Leonolo",
+            "subjectSemester": "First",
+            "quarter": 1,
+            "imgPath": "./Subjects/21st.jpg",
+            "color": "#AC0BD4"
+        }
+    ]

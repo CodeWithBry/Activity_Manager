@@ -1,0 +1,125 @@
+:root {
+    --hoverColor: #651df6;
+}
+
+.sideBarWrapper {
+    display: block;
+    width: 190px;
+    height: 97.5vh;
+    margin: .2rem 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 1rem;
+    transition: .3s ease-out;
+    font-family: var(--font);
+    font-weight: bold;
+    background-color: var(--thirty-percent);
+    color: white;
+}
+
+.hideSidebar {
+    width: 3.7rem;
+}
+
+.linkWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.linkWrapper>li {
+    transition: all .25s ease-in;
+    cursor: pointer;
+}
+
+.linkWrapper>li:hover,
+.linkWrapper>button:hover {
+    color: var(--hoverColor);
+    background-color: #ffffff79;
+}
+
+.linkWrapper .simplifySidebar {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    font-size: 1rem;
+    border: 0;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+.linkWrapper .simplifySidebar>i {
+    padding: .5rem 1.3rem 0 1.3rem;
+    font-size: 1.75rem;
+}
+
+.linkWrapper .simplifySidebar>p {
+    padding: 1rem 1rem 1rem 0;
+}
+
+.linkWrapper .active {
+    color: #f5b11f;
+}
+
+.linkWrapper .active:hover {
+    color: #f5b11f;
+    filter: brightness(.8);
+}
+
+
+.linkWrapper .link {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    font-size: 1rem;
+}
+
+.linkWrapper .link>i {
+    padding: 1rem;
+    font-size: 1.75rem;
+}
+
+.linkWrapper .link:last-child>i {
+    padding: 1rem;
+    padding-left: 1.3rem;
+}
+
+.linkWrapper .link>p {
+    padding: 1rem 1rem 1rem 0;
+}
+
+
+@media screen and (max-width: 678px) {
+    .sideBarWrapper {
+        width: 100vw;
+        height: fit-content;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 0;
+        z-index: 1; 
+    }
+
+    .sideBarWrapper .linkWrapper {
+        flex-direction: row;
+    }
+
+    .linkWrapper > li {
+        width: calc(100%/4);
+        justify-content: center;
+    }
+
+    .linkWrapper .simplifySidebar {
+        display: none;
+    }
+
+    .linkWrapper .link>p {
+        display: none;
+    }
+}
+
+/* 
+@media screen (max-width: ) and (max-height: ) {
+
+} */
