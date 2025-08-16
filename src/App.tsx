@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import s from "./App.module.css"
 import Home from './Pages/Home/Home';
 import Subjects from './Pages/Subjects/Subjects';
@@ -19,7 +19,7 @@ import type { Tab, AuthTab, ContextType } from './Interfaces/interface';
 
 function App() {
   // Navigation
-  const navigation = useNavigate()
+  // const navigation = useNavigate()
 
   // STATIC VARIABLES
   let variable = {} as ContextType
