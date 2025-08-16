@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom';
-import type { Subjects } from '../../../Interfaces/interface';
+import type { SubjectsType } from '../../../Interfaces/interface';
 import s from './Subject.module.css'
 
 type Props = {
-    subData: Subjects;
+    subData: SubjectsType;
 }
 
 function Subject({ subData }: Props) {
-    
-    function hoverSubject(e: any){
-        e.currentTarget.style.backgroundImage = `url(${subData.imgPath})`
-    }
-    function unhoverSubject(e: any) {
-        e.currentTarget.style.background = "#DDD9D3"
-    }
 
     return (
         <div className={`${s.subjectBox}`} >

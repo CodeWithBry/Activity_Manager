@@ -1,4 +1,4 @@
-import { useContext, useRef, useState, type Dispatch, type FC, type SetStateAction } from "react"
+import { useContext, useRef, type Dispatch, type SetStateAction } from "react"
 import s from "./Navbar.module.css"
 import { context } from "../../App"
 import { Link } from "react-router-dom"
@@ -12,7 +12,7 @@ type NavbarProps = {
 }
 
 function Navbar() {
-    const { user, userData, showLogForm, setShowLogForm, authPageDetector } = useContext(context) as NavbarProps
+    const { user, userData, showLogForm, setShowLogForm } = useContext(context) as NavbarProps
 
     const searchBarRef = useRef<any>(null)
 

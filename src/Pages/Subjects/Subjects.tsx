@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, type FC } from "react"
+import { useContext, useEffect, useState } from "react"
 import s from "./Subjects.module.css"
 import type { ContextType, SubjectsType } from "../../Interfaces/interface"
 import Subject from "./Subject/Subject"
@@ -8,7 +8,7 @@ import { context } from "../../App"
 function Subjects() {
 
   const { pageDetector } = useContext(context) as ContextType
-  const [subjects, setSubjects] = useState<SubjectsType[]>(subjectData)
+  const [subjects] = useState<SubjectsType[]>(subjectData)
 
 
   useEffect(() => {

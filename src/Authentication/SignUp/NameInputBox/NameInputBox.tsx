@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import s from "./NameInputBox.module.css"
 import { type Dispatch, type SetStateAction } from "react"
 

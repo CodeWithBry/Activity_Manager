@@ -11,7 +11,7 @@ type Exams = {
 }
 
 function CurrentTasks() {
-  const [activities, setActivities] = useState<Activities[]>([
+  const [activities] = useState<Activities[]>([
     {
       desc: "CSS: Pseudocode - 1: Circle's Perimeter"
     },
@@ -22,7 +22,7 @@ function CurrentTasks() {
       desc: "CSS: Simple Activity: C++ Coding"
     }
   ])
-  const [assignments, setAssignments] = useState<Assignments[]>([
+  const [assignments] = useState<Assignments[]>([
     {
       desc: "21ST CENTURY LITERATURE: Venn Diagram"
     },
@@ -39,7 +39,7 @@ function CurrentTasks() {
       desc: "CSS: DLA 3: C++ Lessons"
     }
   ])
-  const [exams, setExams] = useState<Exams[]>([
+  const [exams] = useState<Exams[]>([
     {
       desc: "UCSP: SOCIETAL ISSUES"
     }
