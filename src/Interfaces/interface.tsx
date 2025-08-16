@@ -15,7 +15,7 @@ export interface AuthTab {
   focus: boolean;
 }
 
-export interface Subjects {
+export interface SubjectsType {
     subjectName: string;
     subjectNameAbbreviation: string;
     subjectTeacher: string;

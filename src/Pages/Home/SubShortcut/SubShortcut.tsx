@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import s from "./SubShortcut.module.css"
-import type { Subjects } from '../../../Interfaces/interface'
+import type { SubjectsType } from '../../../Interfaces/interface'
+import subjectData from "../../../../public/Subjects/subjects.json"
 
 function SubShortcut() {
-    const [subjects, setSubjects] = useState<null | Subjects[]>([])
+    const [subjects, setSubjects] = useState<null | SubjectsType[]>(subjectData)
     const subjectsRef = useRef<null | any>(null)
 
     function slideElement(bool: boolean) {
@@ -18,7 +19,7 @@ function SubShortcut() {
         async function fetchData() {
             try {
                 const req = await fetch("/Subjects/subjects.json")
-                const data: Subjects[] = await req.json();
+                const data: SubjectsType[] = await req.json();
                 setSubjects(data)
                 console.log(data)
             } catch (error) {
