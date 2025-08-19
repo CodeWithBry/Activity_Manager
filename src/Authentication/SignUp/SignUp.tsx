@@ -28,7 +28,7 @@ function LogIn() {
 
     return (
         <>
-            <div className={s.logInWrapper}>
+            <div className={s.logInWrapper} style={proceed ? {opacity: "0"} : {opacity: "1"}}>
                 <div className={s.logInBox}>
                     <div className={s.top}>
                         <h1>SIGN UP</h1>

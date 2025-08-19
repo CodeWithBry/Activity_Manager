@@ -18,9 +18,6 @@ function NameInputBox({ proceed, setProceed, firstName, setFirstName, middleInit
     <>
       <div className={s.signUpWrapper}>
         <div className={s.signUpBox}>
-          <button className={s.backButton} onClick={() => setProceed(false)}>
-            ←
-          </button>
           <div className={s.top}>
             <h1>SIGN UP</h1>
             <span>12-McCarthy</span>
@@ -63,13 +60,18 @@ function NameInputBox({ proceed, setProceed, firstName, setFirstName, middleInit
                 }} />
               <span className={lastName ? s.focused : s.unfocus}>Confirm Password</span>
             </label>
-            <button
-              onClick={() => {
+            <div className={s.buttons}>
+              <button
+                onClick={() => {
 
-              }}
-              id={s.logInButton}>
-              Create Account
-            </button>
+                }}
+                id={s.logInButton}>
+                Create Account
+              </button>
+              <button className={s.backButton} onClick={() => setProceed(false)}>
+                ← Back
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,20 +1,17 @@
-import { useContext, useRef, type Dispatch, type SetStateAction } from "react"
+import { useContext, useRef, useState } from "react"
 import s from "./Navbar.module.css"
 import { context } from "../../App"
 import { Link } from "react-router-dom"
+import type { ContextType } from "../../Interfaces/interface"
 
-type NavbarProps = {
-    user: object | any;
-    userData: object | any;
-    showLogForm: boolean;
-    setShowLogForm: Dispatch<SetStateAction<boolean>>;
-    authPageDetector: (index: number) => void;
-}
 
 function Navbar() {
-    const { user, userData, showLogForm, setShowLogForm } = useContext(context) as NavbarProps
+
+    const { showLogForm } = useContext(context) as ContextType
 
     const searchBarRef = useRef<any>(null)
+    
+    const [showDropDown, setShowDropDown] = useState(true)
 
     function handleSearching() {
 
@@ -44,56 +41,23 @@ function Navbar() {
                         Search
                     </button>
                 </div>
-                {
-                    user?.uid ?
-                        <>
-                            {
-                                showLogForm ?
-                                    <Links /> :
-                                    <>
-                                        <button id={s.bell}
-                                            onClick={() => handleBellClick()}>
-                                            <i className="fa fa-bell-o"></i>
-                                            {
-                                                userData?.notifs.length != 0 ?
-                                                    <span id={"notifIcon"}>{userData.notifs <= 99 ? userData.notifs : "99+"}</span> :
-                                                    null
-                                            }
-                                        </button>
-                                        <button>
-                                            Sign Out
-                                        </button>
-                                    </>
-                            }
-                        </> :
-                        <>
-                            {
-                                showLogForm ?
-                                    <Links /> :
-                                    <>
-                                        <Link to={"/register"} id={s.signUpLink}>
-                                            <button className={s.authButts} id={s.signUp} onClick={() => {
-                                                setShowLogForm(true)
-                                            }}>
-                                                Sign Up
-                                            </button>
-                                        </Link>
-                                        <Link to={"/login"} id={s.logInLink}>
-                                            <button className={s.authButts} id={s.logIn} onClick={() => {
-                                                setShowLogForm(true)
-                                            }}>
-                                                Log In
-                                            </button>
-                                        </Link>
 
-                                        <button id={s.hamburgerButton} >
-                                            <i className="fa fa-navicon"></i>
-                                        </button>
-                                    </>
-                            }
-                        </>
-                }
-
+                <button 
+                    id={s.hamburgerButton}
+                    onClick={()=>{ showDropDown ? setShowDropDown(false) : setShowDropDown(true) }} >
+                    <i className="fa fa-navicon"></i>
+                </button>
+                <RightButtons handleBellClick={handleBellClick} />
+            </div>
+            
+            <div className={showDropDown ? `${s.dropDown} ${s.showDropDown}` : `${s.dropDown} ${s.hideDropDown}  `}>
+                <RightButtons handleBellClick={handleBellClick} />
+                <button 
+                    onClick={()=>{
+                        setShowDropDown(false)
+                    }}>
+                    Hide Menu
+                </button>
             </div>
         </div>
     )
@@ -102,8 +66,69 @@ function Navbar() {
 function Links() {
     return <>
         <Link to={"/"} className={s.Links}>
-            Home
+            <button className={s.authButts}>
+                Home
+            </button>
         </Link>
+    </>
+}
+
+type RightButtonProps = {
+    handleBellClick: () => void
+}
+
+function RightButtons({ handleBellClick }: RightButtonProps) {
+
+    const { user, userData, showLogForm, setShowLogForm, setShowLogOutPrompt } = useContext(context) as ContextType
+
+    return <>
+        {
+            !user?.uid ?
+                <>
+                    {
+                        showLogForm ?
+                            <Links /> :
+                            <>
+                                <button id={s.bell}
+                                    onClick={() => handleBellClick()}>
+                                    <i className="fa fa-bell-o"></i>
+                                    <p>Notifications</p>
+                                    {
+                                        userData?.notifs?.length != 0 ?
+                                            <span id={"notifIcon"}>{userData?.notifs <= 99 ? userData?.notifs : "99+"}</span> :
+                                            null
+                                    }
+                                </button>
+                                <button
+                                    onClick={() => { setShowLogOutPrompt(true) }}>
+                                    Sign Out
+                                </button>
+                            </>
+                    }
+                </> :
+                <>
+                    {
+                        showLogForm ?
+                            <Links /> :
+                            <>
+                                <Link to={"/register"} id={s.signUpLink} className={s.Links}>
+                                    <button className={s.authButts} id={s.signUp} onClick={() => {
+                                        setShowLogForm(true)
+                                    }}>
+                                        Sign Up
+                                    </button>
+                                </Link>
+                                <Link to={"/login"} id={s.logInLink} className={s.Links}>
+                                    <button className={s.authButts} id={s.logIn} onClick={() => {
+                                        setShowLogForm(true)
+                                    }}>
+                                        Log In
+                                    </button>
+                                </Link>
+                            </>
+                    }
+                </>
+        }
     </>
 }
 

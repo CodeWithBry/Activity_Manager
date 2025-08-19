@@ -1,0 +1,58 @@
+.LogOutWrapper {
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 105vh;
+    z-index: 5;
+    font-family: var(--font-title);
+}
+
+.LogOutBox {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    width: 300px;
+    color: var(--thirty-percent);
+    background-color: white;
+    padding: .5rem .75rem;
+    box-shadow: -10px 10px 0 0.5px var(--thirty-percent);
+    border-radius: 1rem;
+}
+
+.LogOutBox>h1,
+.LogOutBox>p {
+    text-align: center;
+}
+
+.LogOutBox>p {
+    color: var(--ten-percent);
+    text-shadow: 1px 1px .5px var(--thirty-percent);
+    font-weight: 700;
+}
+
+.LogOutBox .buttons {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.LogOutBox .buttons > button {
+    width: 48%;
+    height: fit-content;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    background-color: var(--thirty-percent);
+    padding: .2rem 0;
+    font-size: clamp(.75rem, 2.5vw, 1.2rem);
+    font-family: var(--font);
+    font-weight: 700; 
+}
+
+.LogOutBox .buttons > button:hover {
+    background-color: var(--ten-percent);
+}

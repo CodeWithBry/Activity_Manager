@@ -177,7 +177,6 @@
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: clamp(.5rem, 2.5vw, 1rem);
     justify-content: center;
 }
 
@@ -194,11 +193,12 @@
     background-color: #bbb8b8;
 }
 
+
 .bottom .platforms>button>svg {
     background-color: transparent;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1050px) and (max-height: 400px) {
     .logInWrapper {
         height: fit-content;
         padding-bottom: 5rem;

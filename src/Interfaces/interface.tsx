@@ -16,13 +16,13 @@ export interface AuthTab {
 }
 
 export interface SubjectsType {
-    subjectName: string;
-    subjectNameAbbreviation: string;
-    subjectTeacher: string;
-    subjectSemester: string;
-    quarter: number;
-    imgPath: string;
-    color: string;
+  subjectName: string;
+  subjectNameAbbreviation: string;
+  subjectTeacher: string;
+  subjectSemester: string;
+  quarter: number;
+  imgPath: string;
+  color: string;
 }
 
 
@@ -35,17 +35,21 @@ export interface PageDetector {
 
 export interface ContextType {
   user: any, setUser: React.Dispatch<React.SetStateAction<any>>,
-  userData: any , setUserData: React.Dispatch<React.SetStateAction<any>>,
+  userData: any, setUserData: React.Dispatch<React.SetStateAction<any>>,
 
   // Boolean
   showSideBar: boolean, setShowSideBar: React.Dispatch<React.SetStateAction<boolean>>,
   showLogForm: boolean, setShowLogForm: React.Dispatch<React.SetStateAction<boolean>>,
+  showLogOutPrompt: boolean;
+  setShowLogOutPrompt: React.Dispatch<React.SetStateAction<boolean>>
 
   // String and Numbers
   pathTo: string, setPathTo: React.Dispatch<React.SetStateAction<string>>,
 
   // Objects and Arrays
   tabs: Tab[], setTabs: React.Dispatch<React.SetStateAction<Tab[]>>,
+
+
 
   // Functions
   pageDetector: (authInd: number | null, tabInd: number | null, bool: boolean) => void;

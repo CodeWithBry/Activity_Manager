@@ -196,7 +196,7 @@
     background-color: transparent;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1050px) and (max-height: 400px) {
     .logInWrapper {
         height: fit-content;
         padding-bottom: 5rem;

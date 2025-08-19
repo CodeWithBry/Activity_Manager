@@ -16,6 +16,7 @@ import SignUp from './Authentication/SignUp/SignUp.tsx'
 export const context = createContext({})
 
 import type { Tab, AuthTab, ContextType } from './Interfaces/interface';
+import LogOutPrompt from './Components/LogOutPrompt/LogOutPrompt.tsx';
 
 function App() {
   // Navigation
@@ -29,6 +30,8 @@ function App() {
   // BOOLEANS
   const [showSideBar, setShowSideBar] = useState<boolean>(false)
   const [showLogForm, setShowLogForm] = useState<boolean>(false)
+  const [showLogOutPrompt, setShowLogOutPrompt] = useState<boolean>(true)
+  
 
   // STRING AND NUMERICAL VALUE
   const [pathTo, setPathTo] = useState<string>('/')
@@ -87,6 +90,7 @@ function App() {
     // Boolean
     showSideBar, setShowSideBar,
     showLogForm, setShowLogForm,
+    showLogOutPrompt, setShowLogOutPrompt,
 
     // String and Numbers
     pathTo, setPathTo,
@@ -101,6 +105,7 @@ function App() {
   return (
     <context.Provider value={variable}>
       <Navbar />
+      <LogOutPrompt />
       <div className={s.sbartabWrapper} style={showLogForm ? { display: "none" } : { display: "flex" }}>
         <Sidebar />
         <Routes>

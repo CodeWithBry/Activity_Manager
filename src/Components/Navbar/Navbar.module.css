@@ -85,7 +85,8 @@
     background-color: var(--thirty-percent);
 }
 
-.right .authButts, .right .Links {
+.right .authButts,
+.right>button {
     height: fit-content;
     padding: .5rem .75rem;
     font-size: clamp(.6rem, 2vw, 1rem);
@@ -97,10 +98,10 @@
     box-shadow: var(--drop-shadow);
 }
 
- .right .Links {
-    background: var(--ten-percent) ;
+.right>button:nth-of-type(2) {
+    background: var(--ten-percent);
     text-decoration: none;
- }
+}
 
 .right #signUp {
     background-color: var(--ten-percent);
@@ -111,13 +112,31 @@
     text-decoration: none;
 }
 
-.right #logIn {
+.right #logIn,
+.right>button:nth-of-type(3) {
     background-color: var(--thirty-percent);
 }
 
 .right #logIn #logInLink {
     color: inherit;
     text-decoration: none;
+}
+
+.right #bell {
+    position: relative;
+}
+
+.right #bell>p {
+    display: none;
+}
+
+.right #bell>span {
+    position: absolute;
+    top: -.5rem;
+    font-size: .5rem;
+    border-radius: 50%;
+    background-color: red;
+    padding: .4rem .2rem;
 }
 
 .right #hamburgerButton {
@@ -128,7 +147,16 @@
     border-radius: 1rem;
     box-shadow: var(--drop-shadow);
     background-color: white;
+    color: black;
     border: none;
+}
+
+.showDropDown {
+    display: none;
+}
+
+.dropDown {
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -173,11 +201,68 @@
         font-size: .75rem;
     }
 
-    .right .authButts {
+    .right .Links,
+    .right #bell,
+    .right>button:nth-of-type(3) {
         display: none;
     }
 
     .right #hamburgerButton {
         display: grid;
+    }
+
+    
+    .dropDown {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: fit-content;
+        position: absolute;
+        top: 56px;
+        z-index: 5;
+    }
+
+    .showDropDown {
+        display: flex;
+    }
+
+    .hideDropDown {
+        display: none;
+    }
+
+
+    .dropDown>button, .dropDown .Links .authButts  {
+        background-color: white;
+        color: var(--thirty-percent);
+        font-weight: 600;
+        font-family: var(--font);
+        border: none;
+        width: 100%;
+        padding: .75rem 0;
+        border-top: none;
+    }
+
+    .dropDown #bell {
+        position: relative;
+    }
+
+    .dropDown #bell>i {
+        display: none;
+    }
+
+    .dropDown #bell>p {
+        display: block;
+    }
+
+    .dropDown #bell>span {
+        position: absolute;
+        top: 50%;
+        right: 30%;
+        transform: translateY(-50%);
+        font-size: .5rem;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        padding: .35rem .2rem;
     }
 }
