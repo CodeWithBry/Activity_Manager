@@ -2,6 +2,7 @@
     width: 100%;
     height: fit-content;
     margin: auto;
+    margin-bottom: 2rem;
     margin-top: clamp(0rem, 2vw, 4rem);
 }
 

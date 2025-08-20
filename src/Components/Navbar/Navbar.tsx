@@ -65,7 +65,7 @@ function Navbar() {
 
 function Links() {
     return <>
-        <Link to={"/"} className={s.Links}>
+        <Link to={"/"} className={s.HyperLink}>
             <button className={s.authButts}>
                 Home
             </button>

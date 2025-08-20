@@ -21,9 +21,10 @@ import LogOutPrompt from './Components/LogOutPrompt/LogOutPrompt.tsx';
 function App() {
   // Navigation
   // const navigation = useNavigate()
-
   // STATIC VARIABLES
   let variable = {} as ContextType
+
+
 
   // **************** STATE VARIABLES *****************
 
@@ -37,11 +38,11 @@ function App() {
   const [pathTo, setPathTo] = useState<string>('/')
 
   // ARRAYS & OBJECTS
-  const [user, setUser] = useState<object>({})
-  const [userData, setUserData] = useState<object>({})
+  const [user, setUser] = useState<object>({uid: "243342"})
+  const [userData, setUserData] = useState<object>({uid: "243342"})
   const [tabs, setTabs] = useState<Tab[]>([
     { pageName: "Home", path: "/", element: <Home />, keyId: Math.random() * 1, icon: "fa fa-home", focus: true },
-    { pageName: "Subjects", path: "/subjects", element: <Subjects />, keyId: Math.random() * 1, icon: "fa fa-book", focus: false },
+    { pageName: "Subjects", path: `/subjects/`, element: <Subjects />, keyId: Math.random() * 1, icon: "fa fa-book", focus: false },
     { pageName: "Completions", path: "/completions", element: <Completions />, keyId: Math.random() * 1, icon: "	fa fa-check-square-o", focus: false },
     { pageName: "Account", path: "/account", element: <Account />, keyId: Math.random() * 1, icon: "	fa fa-user", focus: false },
   ])
@@ -114,7 +115,7 @@ function App() {
               return <Route path={tab.path} element={tab.element} />
             })
           }
-
+          <Route path='/subjects/:subjectName' element={<Subjects />}/>
         </Routes>
       </div>
       <Routes>

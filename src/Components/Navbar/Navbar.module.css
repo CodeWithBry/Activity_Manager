@@ -98,7 +98,8 @@
     box-shadow: var(--drop-shadow);
 }
 
-.right>button:nth-of-type(2) {
+.right>button:nth-of-type(2),
+.right .HyperLink>button {
     background: var(--ten-percent);
     text-decoration: none;
 }
@@ -202,6 +203,7 @@
     }
 
     .right .Links,
+    .right .HyperLink>button,
     .right #bell,
     .right>button:nth-of-type(3) {
         display: none;
@@ -211,7 +213,7 @@
         display: grid;
     }
 
-    
+
     .dropDown {
         display: flex;
         flex-direction: column;
@@ -231,7 +233,9 @@
     }
 
 
-    .dropDown>button, .dropDown .Links .authButts  {
+    .dropDown>button,
+    .dropDown .Links .authButts,
+    .dropDown .HyperLink > button  {
         background-color: white;
         color: var(--thirty-percent);
         font-weight: 600;

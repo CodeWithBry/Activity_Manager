@@ -177,6 +177,7 @@
     display: flex;
     width: 100%;
     height: fit-content;
+    gap: clamp(.5rem, 2.5vw, 1rem);
     justify-content: center;
 }
 
@@ -208,15 +209,5 @@
 @media screen and (max-width: 400px) and (max-height: 900px) {
     .logInWrapper {
         height: 100%;
-    }
-
-    .logInWrapper .logInBox {
-        width: 190px;
-        height: 290px;
-    }
-
-    .bottom .platforms>button {
-        width: 1.75rem;
-        height: 1.75rem;
     }
 }
