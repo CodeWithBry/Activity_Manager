@@ -11,7 +11,7 @@ function Navbar() {
 
     const searchBarRef = useRef<any>(null)
     
-    const [showDropDown, setShowDropDown] = useState(true)
+    const [showDropDown, setShowDropDown] = useState(false)
 
     function handleSearching() {
 

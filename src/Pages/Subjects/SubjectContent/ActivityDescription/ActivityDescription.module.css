@@ -1,0 +1,130 @@
+.showActDesc {
+    display: grid;
+    place-items: center;
+    background-color: #0000007b;
+    width: 100vw;
+    height: 110vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+    transition: all .2s ease;
+}
+
+.hideActDesc {
+    display: none;
+}
+
+
+.showActDesc .showActDescBox {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: fit-content;
+    padding: .5rem .4rem;
+    background-color: white;
+    box-shadow: 0 5px 10px -5px black;
+    position: relative;
+}
+
+.showActDescBox>h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.showActDescBox>h2 .right {
+    display: flex;
+}
+
+.stateWrapper {
+    display: flex;
+    height: fit-content;
+    position: relative;
+    margin-right: .2rem;
+}
+
+.stateWrapper .showButton {
+    display: none;
+}
+
+.stateWrapper .choices, .stateWrapper .hideChoices {
+    display: flex;
+    gap: .5rem;
+}
+
+
+.showActDescBox>h2 .right>button,
+.stateWrapper > div>button,
+.stateWrapper>button {
+    border: none;
+    padding: .5rem .75rem;
+    font-weight: 700;
+    border-radius: .3rem;
+}
+
+.stateWrapper > div .highlight {
+    background-color: #0ec00e;
+    color: white;
+}
+
+.stateWrapper > div .highlight:nth-of-type(2) {
+    background-color: rgb(192, 136, 14);
+    color: rgb(220, 219, 219);
+}
+
+.stateWrapper .unhighlight {
+    opacity: .2;
+    background-color: rgb(45, 45, 45);
+    color: white;
+}
+
+.hideButton {
+    background-color: var(--thirty-percent);
+    color: white;
+}
+
+.showActDescBox > p {
+    margin: .75rem;
+}
+
+@media screen and (max-width: 400px) and (max-height: 900px) {
+    .showActDesc .showActDescBox {
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        height: 70vh;
+        padding: .5rem .4rem;
+        background-color: white;
+        box-shadow: 0 5px 10px -5px black;
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .stateWrapper .showButton {
+        display: block;
+    }
+
+    .stateWrapper .choices {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        translate: -50%;
+        z-index: 3;
+        background-color: white;
+        padding: .5rem;
+        box-shadow: 0 5px 10px -5px black;
+    }
+
+
+    .stateWrapper .hideChoices {
+        display: none;
+    }
+}

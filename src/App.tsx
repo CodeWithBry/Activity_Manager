@@ -31,7 +31,7 @@ function App() {
   // BOOLEANS
   const [showSideBar, setShowSideBar] = useState<boolean>(false)
   const [showLogForm, setShowLogForm] = useState<boolean>(false)
-  const [showLogOutPrompt, setShowLogOutPrompt] = useState<boolean>(true)
+  const [showLogOutPrompt, setShowLogOutPrompt] = useState<boolean>(false)
   
 
   // STRING AND NUMERICAL VALUE
@@ -107,7 +107,10 @@ function App() {
     <context.Provider value={variable}>
       <Navbar />
       <LogOutPrompt />
-      <div className={s.sbartabWrapper} style={showLogForm ? { display: "none" } : { display: "flex" }}>
+      <div 
+        className={s.sbartabWrapper} 
+        style={showLogForm ? { display: "none" } : { display: "flex" }}
+        onContextMenu={(e)=>{e.preventDefault()}}>
         <Sidebar />
         <Routes>
           {
