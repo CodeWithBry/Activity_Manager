@@ -1,5 +1,5 @@
 import s from "./ActivityDescription.module.css"
-import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 
 interface Assignments {
     desc: string;
